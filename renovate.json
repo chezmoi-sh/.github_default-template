@@ -1,9 +1,8 @@
 {
-    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-    "extends": [
-        "config:recommended",
-        "github>chezmoi-sh/renovate-config",
-        "github>chezmoi-sh/renovate-config:automerge@all",
-        "github>chezmoi-sh/renovate-config:github-actions(weekly)"
-    ]
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended",
+    "github>chezmoi-sh/renovate-config",
+    "github>chezmoi-sh/renovate-config:github-actions(weekly)"
+  ]
 }
