@@ -1,0 +1,24 @@
+---
+name: 🚨 Lint Everything
+
+on:
+  merge_group: {}
+  pull_request: {}
+
+concurrency:
+  group: ${{ github.action }}-${{ github.event.pull_request.id }}
+  cancel-in-progress: true
+permissions: {}
+
+jobs:
+  trunk:
+    name: ✅ Validate code quality
+    permissions:
+      contents: read
+      checks: write
+    runs-on: ubuntu-latest
+    steps:
+      - name: ⬇️ Checkout repository
+        uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
+      - name: ⚡️ Run `trunk check`
+        uses: trunk-io/trunk-action@4d5ecc89b2691705fd08c747c78652d2fc806a94 # v1.1.19
